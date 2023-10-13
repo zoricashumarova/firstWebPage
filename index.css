@@ -1,0 +1,483 @@
+/* -------------------------------------- */
+
+/* RESET - vo ovoj del pisuvame CSS za da go prepokrieme CSS koj e napisan od user agent */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: initial;
+  background-color: initial;
+  font-size: inherit;
+  color: inherit;
+  font: inherit;
+}
+
+@keyframes fade-in-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes make-smaller {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+
+  100% {
+    height: 75%;
+    width: 78%;
+  }
+}
+
+@keyframes fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* STYLES - specificira odredeni elementi*/
+.header {
+  background-image: linear-gradient(to right, #18a0be, #622db9);
+  height: 55px;
+  display: flex;
+}
+
+.logo {
+  align-self: center;
+  margin-left: 20px;
+  margin-right: 30px;
+  animation: fade-in-from-top 0.5s;
+}
+
+.dd-toggle {
+  padding: 0 13px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.4s;
+  animation: fade-in-from-top 0.5s;
+}
+
+.dd-toggle:hover {
+  color: #fff;
+  background-color: rgb(255, 255, 255, 0.07);
+}
+
+.dd-toggle:nth-of-type(4) {
+  margin-left: auto;
+}
+
+.dd-toggle__icon {
+}
+
+.dd-toggle__image {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.dd-toggle__text {
+}
+
+.dd-toggle:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar {
+  background-color: #10171a;
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  background-color: #2b363c;
+  width: 350px;
+  padding: 15px 31px;
+}
+
+.main {
+  background-color: #edf1f3;
+  flex: 1;
+}
+
+.menu {
+}
+
+.menu__button {
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  padding: 19px 0;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  transition: all 0.4s;
+  animation: fade-in-from-left 0.5s;
+}
+
+.menu__button--active {
+  color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.menu__button--active::before {
+  content: "";
+  background-color: #18a0be;
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu__button:hover {
+  background-color: #2b363c;
+  color: #edf1f3;
+  cursor: pointer;
+}
+
+.menu__icon {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.menu__text {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: auto;
+  margin-bottom: 60px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+.copywrite {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.panel__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px #4b5155 solid;
+  padding-bottom: 12px;
+}
+
+.first-heading {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.panel__collapese-icon {
+  color: #6b7276;
+  cursor: pointer;
+}
+
+.panel_images {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px 0;
+  gap: 5px;
+  transition: all 0.5s;
+  animation: fade-in 1s;
+}
+
+.panel__img:nth-child(2) {
+  animation: fade-in 1s 0.1 backwards;
+}
+
+.panel__img:nth-child(3) {
+  animation: fade-in 1s 0.3 backwards;
+}
+
+.panel__img:nth-child(4) {
+  animation: fade-in 1s 0.5 backwards;
+}
+
+.panel__img:nth-child(5) {
+  animation: fade-in 1s 0.7 backwards;
+}
+
+.panel__img:nth-child(6) {
+  animation: fade-in 1s 0.9 backwards;
+}
+
+.panel__img {
+  width: 140px;
+  height: 140px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.panel__img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.panel__btn {
+  width: 140px;
+  height: 140px;
+  border-radius: 7px;
+  object-fit: cover;
+  background-color: #333e44;
+  cursor: pointer;
+}
+
+.panel__btn:hover,
+.panel__btn:focus {
+  background-color: #404c52;
+}
+
+.panel__upload-icon {
+  font-size: 25px;
+  color: #21292d;
+}
+
+.info-bar {
+  background-color: #fff;
+  border-bottom: #6b7276 1px solid;
+  height: 50px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.breadcrumbs {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+.breadcrumbs__link {
+  color: #a6adb1;
+  text-decoration: none;
+}
+
+.breadcrumbs__icon {
+  color: #a6adb1;
+  margin: 0 10px;
+}
+
+.breadcrumbs__text {
+  color: #2e3335;
+}
+
+.button {
+  background-color: #18a0be;
+  cursor: pointer;
+  border-radius: 500px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+}
+
+.artboard {
+  height: calc(100vh - 55px - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.canvas {
+  height: 57.5vh;
+  width: 48.6vw;
+  position: relative;
+  animation: make-smaller 0.5s;
+}
+
+.canvas__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+}
+
+.canvas__fg-img {
+  height: 75%;
+  width: 78%;
+  object-fit: cover;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+}
+
+.tools {
+  height: 57.5vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  animation: fade-in-from-right 0.4s;
+}
+
+.tool {
+  background-color: #e1e6e9;
+  height: 44px;
+  width: 44px;
+  border-radius: 8px;
+  columns: #404446;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.tool--active {
+  background-color: #21292d;
+  color: #fff;
+}
+
+.tool:last-child {
+  margin-top: auto;
+}
+
+.tool:hover,
+.tool:focus {
+  background-color: #21292d;
+  color: #fff;
+}
+
+/* BASE STYLES FOR THE APP - ke vazat za celata aplikacija */
+.app {
+  font-family: "Lato", "sans-serif";
+  font-size: 15px;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+}
+
+.app__container {
+  display: flex;
+  height: calc(100vh - 55px);
+}
+
+@media (max-width: 1200px) {
+  .panel {
+    display: none;
+  }
+
+  .canvas {
+    width: 67vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  .app__container {
+    height: initial;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .info-bar {
+    padding: 0 20px;
+  }
+
+  .artboard {
+    padding: 50px 20px;
+    height: initial;
+  }
+
+  .canvas {
+    width: 100%;
+    height: 500px;
+  }
+
+  .tools {
+    height: 500px;
+  }
+}
+
+/* treba ovde da e max-width ama ne raboti, pa za da raboti go staviv min-width */
+@media (min-width: 580px) {
+  .dd-toggle:nth-of-type(1),
+  .dd-toggle:nth-of-type(2),
+  .dd-toggle:nth-of-type(3) {
+    display: none;
+  }
+
+  .artboard {
+    flex-direction: column;
+  }
+
+  .canvas {
+    order: 2;
+  }
+
+  .tools {
+    flex-direction: row;
+    align-self: flex-start;
+    order: 1;
+    height: initial;
+    margin-bottom: 10px;
+    column-gap: 10px;
+  }
+
+  .tool:last-child {
+    margin: 0;
+  }
+}
+
+/* treba ovde da e max-width ama ne raboti, pa za da raboti go staviv min-width */
+@media (min-width: 440px) {
+  .dd-toggle:nth-child(5),
+  .dd-toggle:nth-child(6) {
+    display: none;
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .breadcrumbs__link,
+  .breadcrumbs__icon {
+    display: none;
+  }
+}
